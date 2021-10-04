@@ -1,0 +1,70 @@
+ul {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+
+/* ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+} */
+
+/* Style the list items */
+ul li {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: white;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  display: block;
+  position: relative;
+}
+
+/* Add a light grey background color on hover */
+/* ul li:hover {
+  background-color: #eee;
+} */
+
+/* Style the close button (span) */
+.close {
+  cursor: pointer;
+  position: absolute;
+  background-color: rgb(85, 83, 83);
+  color: rgb(247, 215, 215);
+  top: 50%;
+  right: 1%;
+  padding: 5px 12px;
+  transform: translate(0%, -50%);
+}
+
+/* .close:hover {background: white;} */
+
+/* Style the Cart Block */
+.block{
+  cursor: pointer;
+  position: absolute;
+  background-color: rgb(238, 236, 236);
+  color: black;
+  top: 50%;
+  right: 0%;
+  left: 60%;
+  padding: 15px 20px;
+  transform: translate(0%, -50%);
+}
+
+/* Style the Payment */
+.payment{
+  cursor: pointer;
+  position: absolute;
+  background-color: white;
+  color: black;
+  top: 50%;
+  right: 50%;
+  left: 20%;
+  transform: translate(0%, -50%);
+}
+
