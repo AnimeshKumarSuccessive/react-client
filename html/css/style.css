@@ -250,6 +250,82 @@ border-radius: 0.22rem;
   font-weight: bold;
 }
 
+/* Media Queries */
+@media screen and (min-width: 992px) {
+  /* container div margin horizontal 100px */
+  /* parment to cart ratio 3:2 */
+
+  .payment{
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .payment_detail_payment{
+    flex-basis: 60%;
+  }
+
+  .payment_detail_cart{
+    flex-basis: 40%;
+  }
+
+}
+
+@media screen and (max-width:991px){
+  /* container div margin horizontal 20px */
+  /* parment to cart ratio 1:1 */
+
+  .payment{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .payment_detail_payment{
+    flex-basis: 50%;
+  }
+
+  .payment_detail_cart{
+    flex-basis: 50%;
+  }
+
+}
+
+@media screen and (max-width:767px){
+  /* hide bread crumb */
+  
+  .payment_methoddata_items{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width:600px){  
+  /* payment and cart flex column and in reverse */
+  
+  .payment__detail{
+    flex-direction: column;
+    flex-flow: column-reverse;    
+  }
+
+}
+
+@media screen and (max-width:400px){  
+  /* Wallet Images must take entire width of the screen if width falls below 400px */
+
+  .payment_detailpayment_allCards{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .payment_detailpaymentallCards_eachcard{
+    padding: 1.5rem;
+    margin: 0 0.5rem 0 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
 
 html
 {
