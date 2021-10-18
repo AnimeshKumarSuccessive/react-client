@@ -1,36 +1,138 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Enteries</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/2d8087be1e.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
 </head>
 
-    <body>
-         <div class="checkout">
-             <div class="checkout__top">
-                <h1 class="checkout__heading">
-                    Checkout
-                </h1>
-                <div class="checkout__badges">
-                    <p>Shipping  </p>
-                    <p class="checkout__badges--active">Payment Method  </p>
-                    <p>Confirmation </p>
-                </div>
-                <div class="checkout__close">
-                    <i class="fa fa-window-close"></i>
-                 </div>
-             </div>
-             <hr class="hr"/>
-             <div class="checkout__down">
-                <p class="checkout__paymentBlock">
-                    Payment Block
-                </p>
-                <p class="checkout__cartBlock">
-                    Cart Block
-                </p>
-             </div>
+<body>
+  <div class="container">
+    <div class="payment">
+      <!-- Main bar -->
+      <div class="payment__method">
+        <h1 class="payment_method_title">Checkout</h1>
+        <div class="payment_method_data">
+          <ul class="payment_methoddata_items">
+            <li class="data_items_li">Shipping</li>
+            <li class="data_items_li">Payment Method</li>
+            <li>Confirmation</li>
+          </ul>
         </div>
-    </body>
+        <i class="fas fa-window-close payment__method--button"></i>
+      </div>
+      <!-- Payment & Cart section -->
+      <div class="payment__detail">
+        <!-- Payment Detail -->
+        <div class="payment_detail_payment">
+
+          <h3 class="payment_detailpayment_head">Wallet</h3>
+          <!-- Available cards  -->
+          <div class="payment_detailpayment_allCards">
+            <div class="payment_detailpaymentallCards_eachcard">
+              <img src="discover.png" alt="Discover Card">
+              <small>Ending with 8899</small>
+            </div>
+            <div class="payment_detailpaymentallCards_eachcard">
+              <img src="mastercard.png" alt="Master Card">
+              <small>Ending with 8899</small>
+            </div>
+            <div class="payment_detailpaymentallCards_eachcard">
+              <img src="visa.png" alt="Visa Card">
+              <small>Ending with 8899</small>
+            </div>
+          </div>
+          <h3 class="payment_detailpayment_head">New Card</h3>
+          <!-- New Card Input/Form defining -->
+          <div class="payment_detailpayment_form">
+            <form class="card__details">
+              <input class="card_details_input" type="text" name="" placeholder="Name on Card" id="">
+              <input class="card_details_input" type="text" name="" placeholder="XXXX-XXXX-XXXX-XXXX" id="">
+              <div class="expiryCvv">
+                <input type="text" name="" placeholder="MM/YY" id="">
+                <input type="text" name="" placeholder="CVV" id="">
+              </div>
+              <input class="card_details_input input--continue" type="button" value="CONTINUE"
+                placeholder="" id="">
+            </form>
+          </div>
+        </div>
+
+        <!-- Cart Block -->
+        <div class="payment_detail_cart">
+          <!-- item 1 -->
+          <div class="orderPlaced">
+            <div class="orderPlaced__imgDiv">
+              <img src="mobile-holder.jpg" alt="mobile holder">
+            </div>
+            <div class="orderPlaced__detail">
+              <div class="orderPlaced_detail_name">
+                <h1>Mobile Holder</h1>
+                <small>Black</small>
+                <h2>Quantity: <span>1</span></h2>
+              </div>
+              <h2 class="orderPlaced_detail_unitPrice">$ 10.00</h2>
+            </div>
+          </div>
+          <!-- item 2 -->
+          <div class="orderPlaced">
+            <div class="orderPlaced__imgDiv">
+              <img src="rado.jpg" alt="mobile holder">
+            </div>
+            <div class="orderPlaced__detail">
+              <div class="orderPlaced_detail_name">
+                <h1>Rado Watch</h1>
+                <small>Black</small>
+                <h2>Quantity: <span>1</span></h2>
+              </div>
+              <h2 class="orderPlaced_detail_unitPrice">$ 10.00</h2>
+            </div>
+          </div>
+          <!-- item 3 -->
+          <div class="orderPlaced">
+            <div class="orderPlaced__imgDiv">
+              <img src="usb-c-2-micro.jpeg" alt="mobile holder">
+            </div>
+            <div class="orderPlaced__detail">
+              <div class="orderPlaced_detail_name">
+                <h1>C type to Micro Converter</h1>
+                <small>Black</small>
+                <h2>Quantity: <span>1</span></h2>
+              </div>
+              <h2 class="orderPlaced_detail_unitPrice">$ 10.00</h2>
+            </div>
+          </div>
+          <!-- item 4 -->
+          <div class="orderPlaced --last">
+            <div class="orderPlaced__imgDiv">
+              <img src="hard-case.jpg" alt="mobile holder">
+            </div>
+            <div class="orderPlaced__detail">
+              <div class="orderPlaced_detail_name">
+                <h1>Mobile Case</h1>
+                <small>Black</small>
+                <h2>Quantity: <span>1</span></h2>
+              </div>
+              <h2 class="orderPlaced_detail_unitPrice">$ 10.00</h2>
+            </div>
+          </div>
+          <!-- Amount to be pay -->
+          <div class="totalAmount">
+            <div class="totalAmount__amount"><span>Sub Total</span><span>$ 100.00</span></div>
+            <div class="totalAmount__amount"><span>Shipping</span><span>$ 10.00</span></div>
+            <div class="totalAmount__amount"><span>Taxes</span><span>$ 5.00</span></div>
+            <div class="totalAmount__amount --total"><span>Total</span><span>$ 115.00</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 
 </html>
