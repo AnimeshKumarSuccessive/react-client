@@ -1,10 +1,11 @@
-import TextFieldDemo from './pages/TextFieldDemo/TextFieldDemo';
+import React from 'react';
+import InputDemo from './pages/InputDemo';
 
-/* eslint-disable react/react-in-jsx-scope */
 function App() {
   return (
     <div>
-      <TextFieldDemo />
+      {/* <TextFieldDemo /> */}
+      <InputDemo />
     </div>
   );
 }
