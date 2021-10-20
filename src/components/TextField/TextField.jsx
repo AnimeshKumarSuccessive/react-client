@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { input, error, errorBorder } from './style';
 
 const TextField = (props) => {
-  // console.log(props);
   const { value, errorMessage, disabled } = props;
 
   return (
