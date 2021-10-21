@@ -21,9 +21,9 @@ const TextFieldDemo = () => {
         <h4 style={headingStyle}><b>This is a disable Input</b></h4>
         <TextField value="Disabled Input" disabled />
         <h4 style={headingStyle}><b>A Valid Input</b></h4>
-        <TextField value="Accessible" disabled={false} />
+        <TextField value="Accessible" />
         <h4 style={headingStyle}><b>An Input with error</b></h4>
-        <TextField value="101" errorMessage="Could not be greater than" disabled={false} />
+        <TextField value="101" errorMessage="Could not be greater than" />
       </div>
     </>
   );
