@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import * as Yup from 'yup';
 import {
@@ -7,7 +8,7 @@ import { btnContainer, inputDemoContainer, btnStyle } from './style';
 import {
   SELECT_OPTIONS, RADIO_OPTIONS, DEFAULTSELECT, CRICKET_VALUE,
 } from '../../config/constant';
-import { getError, hasError, isTouched } from '../../lib/utils/helper';
+import { getError, hasErrors, isTouched } from '../../lib/utils/helper';
 
 const schema = Yup.object({
   name: Yup.string().min(3).max(10).label('Name')
@@ -148,7 +149,7 @@ const InputDemo = () => {
         )}
       <div style={btnContainer}>
         <Button color="gray" style={btnStyle} value="Cancel" />
-        <Button color={hasError(error) || !isTouched(touched) ? 'gray' : '#28a745'} style={btnStyle} value="Submit" disabled={hasError(error) || !isTouched(touched)} onClick={onClick} />
+        <Button color={hasErrors(error) || !isTouched(touched) ? 'gray' : '#28a745'} style={btnStyle} value="Submit" disabled={hasErrors(error) || !isTouched(touched)} onClick={onClick} />
       </div>
     </form>
   );
