@@ -1,21 +1,21 @@
 import React from 'react';
 import { TextField, Slider } from '../../components';
 import { inputContainer, headingStyle, mainContainer } from './style';
-import { PUBLIC_IMAGE_FOLDER, DEFAULT_BANNER_IMAGE } from '../../config/constant';
+import { DEFAULT_BANNER_IMAGE } from '../../config/constant';
 
 const TextFieldDemo = () => {
   const images = [
-    `${PUBLIC_IMAGE_FOLDER}cloud.jpg`,
-    `${PUBLIC_IMAGE_FOLDER}dns-server.png`,
-    `${PUBLIC_IMAGE_FOLDER}full-stack-web-development.jpg`,
-    `${PUBLIC_IMAGE_FOLDER}js.jpg`,
-    `${PUBLIC_IMAGE_FOLDER}load-balancer.png`,
+    'cloud.jpg',
+    'dns-server.png',
+    'full-stack-web-development.jpg',
+    'js.jpg',
+    'load-balancer.png',
   ];
 
   return (
     <>
       <div style={mainContainer}>
-        <Slider altText="Image not found" banners={images} defaultBanner={DEFAULT_BANNER_IMAGE} duration={2000} height={200} random={5} />
+        <Slider altText="Image not found" banners={images} defaultBanner={DEFAULT_BANNER_IMAGE} duration={2000} height={200} random />
       </div>
       <div style={inputContainer}>
         <h4 style={headingStyle}><b>This is a disable Input</b></h4>

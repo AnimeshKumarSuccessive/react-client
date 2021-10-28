@@ -33,12 +33,20 @@ const Slider = (props) => {
 };
 
 Slider.propTypes = {
-  altText: PropTypes.string.isRequired,
-  banners: PropTypes.arrayOf.isRequired,
-  height: PropTypes.number.isRequired,
-  duration: PropTypes.number.isRequired,
-  random: PropTypes.number.isRequired,
+  altText: PropTypes.string,
+  banners: PropTypes.arrayOf,
+  height: PropTypes.number,
+  duration: PropTypes.number,
+  random: PropTypes.bool,
   defaultBanner: PropTypes.string.isRequired,
+};
+
+Slider.defaultProps = {
+  altText: [],
+  random: false,
+  banners: [],
+  height: 10,
+  duration: 2,
 };
 
 export default Slider;
