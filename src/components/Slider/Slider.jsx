@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { getNextRoundRobin, getRandomNumber } from '../../lib/utils/math';
 import { sliderContainer } from './style';
-import { images } from '../../config/constant';
 
 const Slider = (props) => {
   const {
@@ -13,10 +12,14 @@ const Slider = (props) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const maxLength = images.length;
-      const newIndex = random ? getRandomNumber(maxLength) : getNextRoundRobin(maxLength, index);
-      setIndex(newIndex);
-    }, duration);
+      const maxLength = banners.length;
+      if (random) {
+        setIndex(getRandomNumber(maxLength));
+      } else {
+        setIndex((i) => getNextRoundRobin(maxLength, i));
+      }
+    },
+    duration);
     return () => clearInterval(interval);
   }, []);
 
