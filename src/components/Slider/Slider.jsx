@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-import { MAX_NUMBER } from '../../config/constant';
 import { getNextRoundRobin, getRandomNumber } from '../../lib/utils/math';
 import { sliderContainer } from './style';
+import { images } from '../../config/constant';
 
 const Slider = (props) => {
   const {
@@ -13,13 +13,10 @@ const Slider = (props) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (random) {
-        setIndex(getRandomNumber(MAX_NUMBER));
-      } else {
-        setIndex((i) => getNextRoundRobin(MAX_NUMBER, i));
-      }
-    },
-    duration);
+      const maxLength = images.length;
+      const newIndex = random ? getRandomNumber(maxLength) : getNextRoundRobin(maxLength, index);
+      setIndex(newIndex);
+    }, duration);
     return () => clearInterval(interval);
   }, []);
 
