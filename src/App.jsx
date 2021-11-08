@@ -1,15 +1,18 @@
+import { CssBaseline } from '@mui/material';
 import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-// import TextFieldDemo from './pages/TextFieldDemo/TextFieldDemo';
+import Login from './pages/Login';
 import { Trainee } from './pages';
+import { Navbar } from './pages/Components';
 
 function App() {
   return (
     <div className="App">
-      {/* <TextFieldDemo /> */}
-      {/* <InputDemo /> */}
-      <Trainee />
+      <CssBaseline>
+        <Navbar />
+        <br />
+        <Trainee />
+        <Login />
+      </CssBaseline>
     </div>
   );
 }
