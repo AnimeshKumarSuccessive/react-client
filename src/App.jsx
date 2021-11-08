@@ -1,18 +1,25 @@
-import { CssBaseline } from '@mui/material';
 import React from 'react';
-import Login from './pages/Login';
-import { Trainee } from './pages';
-import { Navbar } from './pages/Components';
+import { BrowserRouter, Switch } from 'react-router-dom';
+import {
+  Trainee, Login, TextFieldDemo, ChildrenDemo, InputDemo, NotFound,
+} from './pages';
+import AuthRoute from './routes/AuthRoute';
+import { PrivateRoute } from './routes';
 
 function App() {
   return (
     <div className="App">
-      <CssBaseline>
-        <Navbar />
-        <br />
-        <Trainee />
-        <Login />
-      </CssBaseline>
+      <BrowserRouter>
+        <Switch>
+          <PrivateRoute exact path="/" component={Trainee} />
+          <AuthRoute exact path="/login" component={Login} />
+          <PrivateRoute exact path="/trainee" component={Trainee} />
+          <PrivateRoute exact path="/childrendemo" component={ChildrenDemo} />
+          <PrivateRoute exact path="/textfielddemo" component={TextFieldDemo} />
+          <PrivateRoute exact path="/inputdemo" component={InputDemo} />
+          <PrivateRoute component={NotFound} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
