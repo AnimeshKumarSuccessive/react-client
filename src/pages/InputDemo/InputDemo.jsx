@@ -1,52 +1,63 @@
 import React, { useEffect, useState } from 'react';
 import { SelectField, RadioGroup, TextField } from '../../components';
 import { inputDemoContainer } from './style';
-import { radioOptions, selectOptions } from '../../config/constant';
+import { SELECT_OPTIONS, CRICKET_RADIO_OPTIONS, FOOTBALL_RADIO_OPTIONS } from '../../config/constant';
 
 const InputDemo = () => {
-  const [value, setValue] = useState({
-    name: '',
-    sport: '',
-    cricket: '',
-    football: '',
-  });
+  const [name, setName] = useState('');
+  const [sport, setSport] = useState('select');
+  const [cricket, setCricket] = useState('');
+  const [football, setFootball] = useState('');
 
   const handleSportChange = (event) => {
-    setValue({
-      name: value.name,
-      sport: event.target.value,
-      cricket: '',
-      football: '',
-    });
+    if (event.target.value === '' || event.target.value === 'select') {
+      setSport('');
+    } else {
+      setSport(event.target.value);
+    }
+    setFootball('');
+    setCricket('');
   };
 
   const handleNameChange = (event) => {
-    setValue({
-      name: event.target.value,
-      sport: value.sport,
-      cricket: value.cricket,
-      football: value.football,
-    });
+    setName(event.target.value);
   };
 
   const handleSportProfileChange = (event) => {
-    setValue({
-      name: value.name,
-      sport: value.sport,
-      cricket: value.sport && value.sport === 'cricket' ? event.target.attributes.label.value : '',
-      football: value.sport && value.sport === 'football' ? event.target.attributes.label.value : '',
-    });
+    if (sport === 'cricket') {
+      setCricket(event.target.value);
+    } else {
+      setFootball(event.target.value);
+    }
   };
 
   useEffect(() => {
-    console.log(value);
+    console.log({
+      name, sport, cricket, football,
+    });
   });
 
+  const handleBlur = () => {
+    // console.log(e.target.value);
+  };
+
+  // const selectSports = value[value.sport];
+  let radio = '';
+  if (sport === 'cricket') {
+    radio = <RadioGroup label="What To Do" value={cricket} options={CRICKET_RADIO_OPTIONS} onChange={handleSportProfileChange} onBlur={() => handleBlur(`${sport}`)} />;
+  } else if (sport === 'football') {
+    radio = <RadioGroup label="What To Do" value={football} options={FOOTBALL_RADIO_OPTIONS} onChange={handleSportProfileChange} onBlur={() => handleBlur(`${sport}`)} />;
+  }
   return (
     <div style={inputDemoContainer}>
-      <TextField label="Name" onChange={handleNameChange} />
-      <SelectField defaultText="Select" value={value.sport} options={selectOptions} onChange={handleSportChange} />
-      <RadioGroup value={value.sport} options={radioOptions} onChange={handleSportProfileChange} />
+      <TextField label="Name" value={name} defaultValue="" onChange={handleNameChange} onBlur={() => handleBlur.name} />
+      <SelectField
+        options={SELECT_OPTIONS}
+        onBlur={() => handleBlur('sport')}
+        onChange={handleSportChange}
+        defaultText="Select"
+      />
+      {radio}
     </div>
   );
 };

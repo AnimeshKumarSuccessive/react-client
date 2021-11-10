@@ -2,7 +2,7 @@ export const PUBLIC_IMAGE_FOLDER = '/images/';
 export const DEFAULT_BANNER_IMAGE = 'banners/default.png';
 export const MAX_NUMBER = 10;
 
-export const selectOptions = [
+export const SELECT_OPTIONS = [
   {
     value: 'cricket',
     label: 'Cricket',
@@ -14,29 +14,39 @@ export const selectOptions = [
 
 ];
 
-export const radioOptions = [
+export const CRICKET_RADIO_OPTIONS = [
   {
-    value: 'cricket',
+    sport: 'cricket',
+    value: 'wicket-keeper',
     label: 'Wicket-Keeper',
   },
   {
-    value: 'cricket',
+    sport: 'cricket',
+    value: 'batsmen',
     label: 'Batsmen',
   },
   {
-    value: 'cricket',
+    sport: 'cricket',
+    value: 'bowler',
     label: 'Bowler',
   },
   {
-    value: 'cricket',
-    label: 'All Rounder',
+    sport: 'cricket',
+    value: 'All Rounder',
+    label: 'all Rounder',
+  },
+];
+
+export const FOOTBALL_RADIO_OPTIONS = [
+
+  {
+    sport: 'football',
+    value: 'Defender',
+    label: 'defender',
   },
   {
-    value: 'football',
-    label: 'Defender',
-  },
-  {
-    value: 'football',
+    sport: 'football',
+    value: 'Striker',
     label: 'striker',
   },
 ];

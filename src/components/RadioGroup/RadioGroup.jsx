@@ -7,30 +7,24 @@ const RadioGroup = (props) => {
     error,
     onChange,
     options,
+    onBlur,
+    label,
   } = props;
 
   return (
     <>
-      <div value={value}>
-        { value
-          ? (
-            <span>
-              <b>
-                What you do?
-              </b>
-            </span>
-          ) : ''}
-        {options.map((item) => {
-          const { value: selectValue, label } = item;
-          if (selectValue !== value) return false;
-          return (
+      <label htmlFor>
+        <b><span>{label}</span></b>
+        {
+          options.map((val, index) => (
             <div>
-              <input onChange={onChange} id={selectValue} label={label} name={value} type="radio" key={selectValue} value={selectValue} />
-              <label htmlFor={selectValue}>{label}</label>
+              <input type="radio" checked={value === val.value} id={`${val.value}_${index}`} value={val.value} onChange={onChange} error={error} onBlur={onBlur} />
+              {val.label}
             </div>
-          );
-        })}
-      </div>
+          ))
+        }
+      </label>
+
       <p>{error}</p>
     </>
   );
@@ -41,5 +35,7 @@ RadioGroup.propTypes = {
   error: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.string.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
 };
 export default RadioGroup;
