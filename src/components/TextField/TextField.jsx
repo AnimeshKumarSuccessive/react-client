@@ -19,11 +19,17 @@ const TextField = (props) => {
 };
 
 TextField.propTypes = {
-  value: PropTypes.string.isRequired,
-  errorMessage: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  errorMessage: PropTypes.string,
   disabled: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   onBlur: PropTypes.func.isRequired,
 };
+
+TextField.defaultProps = {
+  value: '',
+  errorMessage: '',
+};
+
 export default TextField;
