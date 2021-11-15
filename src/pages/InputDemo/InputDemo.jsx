@@ -94,7 +94,6 @@ const InputDemo = () => {
     });
   });
 
-  // const selectSports = value[value.sport];
   let radio = '';
   if (sport === 'cricket') {
     radio = (

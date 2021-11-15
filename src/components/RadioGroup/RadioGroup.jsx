@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { errorField } from '../SelectField/style';
-// import { DEFAULTSELECT } from '../../config/constant';
 
 const RadioGroup = (props) => {
   const {
