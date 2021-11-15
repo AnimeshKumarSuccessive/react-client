@@ -32,10 +32,15 @@ const RadioGroup = (props) => {
 
 RadioGroup.propTypes = {
   value: PropTypes.string.isRequired,
-  error: PropTypes.string.isRequired,
+  error: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.string.isRequired,
   onBlur: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
 };
+
+RadioGroup.defaultProps = {
+  error: '',
+};
+
 export default RadioGroup;
