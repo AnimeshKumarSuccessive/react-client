@@ -14,7 +14,6 @@ const Button = (props) => {
     ...style,
     backgroundColor: color,
   };
-  console.log(color);
 
   return (
     <>

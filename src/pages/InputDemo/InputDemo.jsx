@@ -44,7 +44,6 @@ const InputDemo = () => {
       if (errors) {
         errors.inner.forEach((err) => { schemaErrors[err.path] = err.message; });
         setError(schemaErrors);
-        console.log('handleError', error);
       }
     });
   };
@@ -55,7 +54,6 @@ const InputDemo = () => {
     handleErrors({
       name, sport, football, cricket,
     });
-    console.log(touched);
   };
   const onClick = () => {
 
