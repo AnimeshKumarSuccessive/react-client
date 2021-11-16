@@ -4,18 +4,9 @@ import { Typography } from '@mui/material';
 import theme from './theme';
 import { ChildrenDemo } from './pages/ChildrenDemo';
 
-// import logo from './logo.svg';
-// import './App.css';
-// import TextFieldDemo from './pages/TextFieldDemo/TextFieldDemo';
-// import InputDemo from './pages/InputDemo/InputDemo';
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      {/* <div className="App"> */}
-      {/* <TextFieldDemo /> */}
-      {/* <InputDemo />
-      </div> */}
 
       <Typography>
         <ChildrenDemo />

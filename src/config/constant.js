@@ -1,51 +1,61 @@
 export const PUBLIC_IMAGE_FOLDER = '/images/';
 export const DEFAULT_BANNER_IMAGE = 'banners/default.png';
 export const MAX_NUMBER = 10;
-export const CRICKET_VALUE = 'cricket';
-export const CRICKET_LABEL = 'Cricket';
-export const FOOTBALL_VALUE = 'football';
-export const FOOTBALL_LABEL = 'Football';
-export const WICKET_KEEPER = 'Wicket-Keeper';
-export const BATSMEN = 'Batsmen';
-export const BOWLER = 'Bowler';
-export const ALL_ROUNDER = 'All Rounder';
-export const DEFENDER = 'Defender';
-export const STRIKER = 'Striker';
 export const DEFAULTSELECT = 'Select';
+
+export const images = [
+  `${PUBLIC_IMAGE_FOLDER}cloud.jpg`,
+  `${PUBLIC_IMAGE_FOLDER}dns-server.png`,
+  `${PUBLIC_IMAGE_FOLDER}full-stack-web-development.jpg`,
+  `${PUBLIC_IMAGE_FOLDER}js.jpg`,
+  `${PUBLIC_IMAGE_FOLDER}load-balancer.png`,
+];
+
 export const SELECT_OPTIONS = [
   {
-    value: CRICKET_VALUE,
-    label: CRICKET_LABEL,
+    value: 'cricket',
+    label: 'Cricket',
   },
   {
-    value: FOOTBALL_VALUE,
-    label: FOOTBALL_LABEL,
+    value: 'football',
+    label: 'Football',
   },
 
 ];
-export const RADIO_OPTIONS = [
+
+export const CRICKET_RADIO_OPTIONS = [
   {
-    value: CRICKET_VALUE,
-    label: WICKET_KEEPER,
+    sport: 'cricket',
+    value: 'wicket-keeper',
+    label: 'Wicket-Keeper',
   },
   {
-    value: CRICKET_VALUE,
-    label: BATSMEN,
+    sport: 'cricket',
+    value: 'batsmen',
+    label: 'Batsmen',
   },
   {
-    value: CRICKET_VALUE,
-    label: BOWLER,
+    sport: 'cricket',
+    value: 'bowler',
+    label: 'Bowler',
   },
   {
-    value: CRICKET_VALUE,
-    label: ALL_ROUNDER,
+    sport: 'cricket',
+    value: 'All Rounder',
+    label: 'all Rounder',
+  },
+];
+
+export const FOOTBALL_RADIO_OPTIONS = [
+
+  {
+    sport: 'football',
+    value: 'Defender',
+    label: 'defender',
   },
   {
-    value: FOOTBALL_VALUE,
-    label: DEFENDER,
-  },
-  {
-    value: FOOTBALL_VALUE,
-    label: STRIKER,
+    sport: 'football',
+    value: 'Striker',
+    label: 'striker',
   },
 ];
