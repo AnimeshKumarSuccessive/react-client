@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core';
-import Text from '../../components/Math';
+import { Math } from '../../components';
 import Theme from '../../theme';
 
 export default class ChildrenDemo extends React.Component {
@@ -15,11 +14,11 @@ export default class ChildrenDemo extends React.Component {
     return (
       <>
         <ThemeProvider theme={Theme}>
-          <Text first={7} second={4} operator="+" />
-          <Text first={7} second={3} operator="-" />
-          <Text first={7} second={20} operator="*" />
-          <Text first={7} second={0} operator="/" />
-          <Text first={7} second={4} operator="+">
+          <Math first={7} second={4} operator="+" />
+          <Math first={7} second={3} operator="-" />
+          <Math first={7} second={20} operator="*" />
+          <Math first={7} second={0} operator="/" />
+          <Math first={7} second={4} operator="+">
             {
               (first, second, result) => (
                 <p>
@@ -38,8 +37,8 @@ export default class ChildrenDemo extends React.Component {
                 </p>
               )
             }
-          </Text>
-          <Text first={3} second={4} operator="+">
+          </Math>
+          <Math first={3} second={4} operator="+">
             {
               (first, second, result) => (
                 <p>
@@ -59,7 +58,7 @@ export default class ChildrenDemo extends React.Component {
                 </p>
               )
             }
-          </Text>
+          </Math>
         </ThemeProvider>
       </>
     );
