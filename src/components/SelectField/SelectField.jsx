@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-// import Select from 'react-select';
 import { selectInput, errorField } from './style';
 
 const SelectField = (props) => {
@@ -25,11 +24,11 @@ const SelectField = (props) => {
             <option key={defaultText} value={defaultText}>{defaultText}</option>
             {
               options.map((item) => {
-                const { value: selectValue, label } = item;
+                const { value: optionValue, label } = item;
                 return (
                   <option
                     key={label}
-                    value={selectValue}
+                    value={optionValue}
                   >
                     {label}
                   </option>

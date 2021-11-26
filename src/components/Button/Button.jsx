@@ -12,7 +12,7 @@ const Button = (props) => {
 
   const btnstyle = {
     ...style,
-    backgroundcolor: color,
+    backgroundColor: color,
   };
 
   return (
