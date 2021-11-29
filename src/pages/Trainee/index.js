@@ -1,3 +1,3 @@
-import { AddDialog } from './Components';
+import trainee from './Trainee';
 
-export default AddDialog;
+export default trainee;

@@ -4,7 +4,8 @@ import {
   Trainee, Login, TextFieldDemo, ChildrenDemo, InputDemo, NotFound,
 } from './pages';
 import AuthRoute from './routes/AuthRoute';
-import { PrivateRoute } from './routes';
+import PrivateRoute from './routes/PrivateRoute';
+import TraineeDetail from './pages/Trainee/TraineeDetail';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <PrivateRoute exact path="/childrendemo" component={ChildrenDemo} />
           <PrivateRoute exact path="/textfielddemo" component={TextFieldDemo} />
           <PrivateRoute exact path="/inputdemo" component={InputDemo} />
+          <PrivateRoute exact path="/trainee/:id" component={TraineeDetail} />
           <PrivateRoute component={NotFound} />
         </Switch>
       </BrowserRouter>

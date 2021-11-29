@@ -4,3 +4,4 @@ export { default as Trainee } from './Trainee';
 export { default as Login } from './Login';
 export { default as ChildrenDemo } from './ChildrenDemo';
 export { default as NotFound } from './NotFound';
+export { default as Navbar } from '../Layouts/components/Navbar';
