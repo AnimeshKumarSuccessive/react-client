@@ -125,7 +125,6 @@ const AddDialog = () => {
       <Button
         style={{ margin: '12px' }}
         variant="outlined"
-        color="secondary"
         onClick={handleClickOpen}
       >
         ADD TRAINEE
@@ -217,10 +216,9 @@ const AddDialog = () => {
             </div>
           </DialogContent>
           <DialogActions>
-            <Button color="secondary" onClick={() => handleClose('cancel')}>Cancel</Button>
+            <Button onClick={() => handleClose('cancel')}>Cancel</Button>
             <Button
               type="submit"
-              color="secondary"
               disabled={hasErrors(error) || !isTouched(touched)}
             >
               Submit
