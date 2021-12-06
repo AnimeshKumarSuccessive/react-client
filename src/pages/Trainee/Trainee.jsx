@@ -1,11 +1,12 @@
 import React from 'react';
-import { AddDialog } from './Components';
+import { AddDialog, TableList } from './Components';
 import trainees from './data/trainee';
 import TraineeList from './TraineeList';
 
 const Trainee = () => (
   <>
     <AddDialog />
+    <TableList />
     <TraineeList trainees={trainees} />
   </>
 );
