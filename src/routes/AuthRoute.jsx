@@ -17,7 +17,6 @@ const AuthRoute = ({
       location,
     ) => (
       <AuthLayout>
-        <br />
         <Component match={match} history={history} location={location} />
       </AuthLayout>
     )}
