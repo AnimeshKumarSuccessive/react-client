@@ -10,20 +10,19 @@ import TraineeDetail from './pages/Trainee/TraineeDetail';
 
 function App() {
   return (
-    <CssBaseline>
-      <BrowserRouter>
-        <Switch>
-          <PrivateRoute exact path="/" component={Trainee} />
-          <AuthRoute exact path="/login" component={Login} />
-          <PrivateRoute exact path="/trainee" component={Trainee} />
-          <PrivateRoute exact path="/childrendemo" component={ChildrenDemo} />
-          <PrivateRoute exact path="/textfielddemo" component={TextFieldDemo} />
-          <PrivateRoute exact path="/inputdemo" component={InputDemo} />
-          <PrivateRoute exact path="/trainee/:id" component={TraineeDetail} />
-          <PrivateRoute component={NotFound} />
-        </Switch>
-      </BrowserRouter>
-    </CssBaseline>
+    <BrowserRouter>
+      <CssBaseline />
+      <Switch>
+        <PrivateRoute exact path="/" component={Trainee} />
+        <AuthRoute exact path="/login" component={Login} />
+        <PrivateRoute exact path="/trainee" component={Trainee} />
+        <PrivateRoute exact path="/childrendemo" component={ChildrenDemo} />
+        <PrivateRoute exact path="/textfielddemo" component={TextFieldDemo} />
+        <PrivateRoute exact path="/inputdemo" component={InputDemo} />
+        <PrivateRoute exact path="/trainee/:id" component={TraineeDetail} />
+        <PrivateRoute component={NotFound} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
