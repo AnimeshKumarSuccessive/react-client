@@ -1,23 +1,18 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import PrivateLayout from '../Layouts/PrivateLayout';
+import PrivateLayout from '../Layouts/PrivateLayout/PrivateLayout';
 
-const PrivateRoute = ({
-  exact,
-  path,
-  component: Component,
-}) => (
+const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
-    exact={exact}
-    path={path}
-    render={(
-      match,
-      history,
-      location,
-    ) => (
+    {...rest}
+    // NOTE: render method use to inline rendering
+    // REF: https://reactrouter.com/web/api/Route
+    render={(matchProps) => (
+      // matchProps = (match,hisory,location)
       <PrivateLayout>
-        <Component match={match} history={history} location={location} />
+        <Component {...matchProps} />
       </PrivateLayout>
     )}
   />
@@ -26,7 +21,6 @@ const PrivateRoute = ({
 export default PrivateRoute;
 
 PrivateRoute.propTypes = {
-  exact: PropTypes.bool.isRequired,
-  path: PropTypes.string.isRequired,
   component: PropTypes.func.isRequired,
+  rest: PropTypes.objectOf.isRequired,
 };
