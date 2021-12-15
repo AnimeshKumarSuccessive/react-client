@@ -1,3 +1,3 @@
-import DataTable from './DataTable';
+import DataTable from './dataTable';
 
 export default DataTable;
