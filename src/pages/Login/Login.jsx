@@ -1,15 +1,21 @@
+/* eslint-disable no-constant-condition */
 /* eslint-disable react/jsx-closing-tag-location */
 import React, { useEffect, useState } from 'react';
 import {
   Card, TextField, IconButton, CardContent, Button, Typography,
 } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import * as Yup from 'yup';
 import { cardStyle } from './style';
+import { callAllApi } from '../../lib/utils/api';
+// import { callApi } from '../../lib/utils/api';
 import { getError, hasErrors, isTouched } from '../../lib/utils/helper';
+import { SnackContext } from '../../contexts/SnackBarProvider/SnackBarProvider';
 
 const schema = Yup.object({
   email: Yup.string().email().required().label('Email'),
@@ -17,6 +23,9 @@ const schema = Yup.object({
 });
 
 const Login = () => {
+  const history = useHistory();
+  const [loading, setLoading] = useState(false);
+  const openSnackBar = React.useContext(SnackContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState([]);
@@ -40,6 +49,29 @@ const Login = () => {
     });
   };
 
+  const spinner = {
+    marginLeft: '5px',
+  };
+
+  const handleLogin = async () => {
+    setLoading(true);
+    // const result = await callApi('http://localhost:9000/api/user/createToken', email, password);
+    const result = await callAllApi('/user/createToken', 'POST', { email, password });
+    // console.log(result.data.data.token);
+    setTimeout(() => {
+      if (result) {
+        setLoading(false);
+        localStorage.setItem('token', result.data.data.token);
+        history.push('/trainee');
+        openSnackBar({ message: 'Successfully Login', status: 'success' });
+      } else {
+        setLoading(true);
+        openSnackBar({ message: 'Authorization fail', status: 'error' });
+        setLoading(false);
+      }
+    }, 2000);
+  };
+
   const onClickHandler = () => {
     setShowPassword(showPassword !== true);
   };
@@ -51,13 +83,14 @@ const Login = () => {
       email, password,
     });
   };
-
   const onChangeHandler = (field, event) => {
     if (field === 'email') {
       setEmail(event.target.value);
+      setLoading(false);
     }
     if (field === 'password') {
       setPassword(event.target.value);
+      setLoading(false);
     }
     handleError({
       email, password,
@@ -65,6 +98,7 @@ const Login = () => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log({ email, password });
   });
 
@@ -76,7 +110,7 @@ const Login = () => {
         }}
         >
           <img height="50" src="/lock.jpg" alt="not found" />
-          <Typography variant="h4" component="h4"> Login </Typography>
+          <Typography> Login </Typography>
           <br />
           <TextField
             InputProps={{
@@ -97,7 +131,7 @@ const Login = () => {
             InputProps={{
               startAdornment: <InputAdornment onClick={onClickHandler} position="start">
                 <IconButton aria-label="toggle password visibility" edge="end">
-                  { showPassword ? <Visibility /> : <VisibilityOff />}
+                  {true ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </InputAdornment>,
             }}
@@ -117,9 +151,13 @@ const Login = () => {
           <Button
             fullWidth
             variant="contained"
-            disabled={hasErrors(error) || !isTouched(touched)}
+            disabled={hasErrors(error) || !isTouched(touched) || loading}
+            onClick={handleLogin}
           >
             Sign In
+            {loading && (
+              <CircularProgress size={20} style={spinner} />
+            )}
           </Button>
         </CardContent>
       </Card>

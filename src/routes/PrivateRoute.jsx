@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import PrivateLayout from '../Layouts/PrivateLayout/PrivateLayout';
+import Layout from '../Layouts';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -11,9 +11,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     // REF: https://reactrouter.com/web/api/Route
     render={(matchProps) => (
       // matchProps = (match,hisory,location)
-      <PrivateLayout>
+      <Layout.PrivateLayout>
         <Component {...matchProps} />
-      </PrivateLayout>
+      </Layout.PrivateLayout>
     )}
   />
 );
